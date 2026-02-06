@@ -1,9 +1,13 @@
 from django.shortcuts import render,redirect
 from.forms import *
 from .models import *
+from django.http import HttpResponse
 
 
 # Create your views here.
+def home(request):
+    return HttpResponse("welcome")
+
 def add_book(request):
     form=Bookform()
     if request.method=='POST':
