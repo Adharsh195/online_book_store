@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">BOOK STORE</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">books</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">categories</a>
+        </li>
+      </ul>
+      <span class="navbar-text">
+      </span>
+    </div>
+  </div>
+</nav><br><br><br>
+  <center>
+    <h1>CATEGORY LIST</h1>
+    <div class="d-flex flex-wrap justify-content-center gap-4">
+    {% for i in cat %}
+    <div class="card" style="width: 18rem;">
+  <img src="https://images.pexels.com/photos/1370295/pexels-photo-1370295.jpeg?cs=srgb&dl=bookcase-books-bookshelf-1370295.jpg&fm=jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{ i.category_name }}</h5>
+    <p class="card-text">{{ i.cat_description }}</p>
+    <a href="" class="btn btn-primary">view books</a>
+    <a href="{% url 'edit_category' i.id %}">EDIT</a>
+    <a href="{% url 'delete_category' i.id %}">DELETE</a>
+  </div>
+</div>
+
+    {% endfor %}
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    </center>
+</body>
+</html>

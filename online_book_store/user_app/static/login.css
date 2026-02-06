@@ -1,0 +1,17 @@
+/* Full page container */
+.container {
+    display: flex;
+    justify-content: center;   /* Horizontal center */
+    align-items: center;        /* Vertical center */
+    height: 100vh;              /* Full viewport height */
+    background-color: #cd9b5d;  /* Optional background */
+}
+
+/* Login Box */
+.login-box {
+    background: #f7f2e8;
+    padding: 30px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+}
